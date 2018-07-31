@@ -18,19 +18,19 @@ function setEnemies(num){
     teamChosen = true;
     if(num !== 0){
         umBox.empty();
-        umEnemyBox.append("<img id='char1'src='" + teams[0].image +"'>")
+        umEnemyBox.append("<span id='char0'><h3 class='name'>Jim Harbaugh</h3><img src='" + teams[0].image +"'><h4 class='hp' id='umHP'></h4></span>")
     }
     if(num !== 1){
         osuBox.empty();
-        osuEnemyBox.append("<img id='char2'src='" + teams[1].image +"'>")
+        osuEnemyBox.append("<span id='char1'><h3 class='name'>Brutus the Buckeye</h3><img src='" + teams[1].image +"'><h4 class='hp' id='osuHP'></h4></span>")
     }
     if(num !== 2){
         msuBox.empty();
-        msuEnemyBox.append("<img id='char3'src='" + teams[2].image +"'>")
+        msuEnemyBox.append("<span id='char2'><h3 class='name'>Sparty</h3><img src='" + teams[2].image +"'><h4 class='hp' id='msuHP'></h4></span>")
     }
     if(num !== 3){
         wiscoBox.empty();
-        wiscoEnemyBox.append("<img id='char4'src='" + teams[3].image +"'>")
+        wiscoEnemyBox.append("<span id='char3'><h3 class='name'>Bucky the Badger</h3><img src='" + teams[3].image +"'><h4 class='hp' id='wiscoHP'></h4></span>")
     }
 }
 
@@ -39,12 +39,12 @@ var teams = [
     {
         "name": "Jim Harbaugh",
         "image": "assets/images/umich.jpg",
-        "HP": 1000,
-        "AP": 100,
-        "CAP": 10,
+        "HP": 2000,
+        "AP": 30,
+        "CAP": 100,
         "reset": function(){
             umBox.empty();
-            umBox.append("<img src='" + this.image +"'>");
+            umBox.append("<span id='char0'><h3 class='name'>Jim Harbaugh</h3><img src='" + this.image +"'><h4 class='hp' id='umHP'></h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 0;
@@ -55,19 +55,19 @@ var teams = [
             enemyTeam = 0;
             enemyChosen = true;
             umEnemyBox.empty();
-            enemyBox.append("<img src='" + this.image +"'>");
+            enemyBox.append("<span id='char0'><h3 class='name'>Jim Harbaugh</h3><img src='" + this.image +"'><h4 class='hp' id='umHP'></h4></span>");
         }
     },
     // Ohio State booo
     {
         "name": "Brutus the Buckeye",
         "image": "assets/images/osu.jpg",
-        "HP": 1000,
-        "AP": 100,
-        "CAP": 10,
+        "HP": 2500,
+        "AP": 50,
+        "CAP": 100,
         "reset": function(){
             osuBox.empty();
-            osuBox.append("<img src='" + this.image +"'>");
+            osuBox.append("<span id='char1'><h3 class='name'>Brutus the Buckeye</h3><img src='" + this.image +"'><h4 class='hp' id='osuHP'></h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 1;
@@ -78,19 +78,19 @@ var teams = [
             enemyTeam = 1;
             enemyChosen = true;
             osuEnemyBox.empty();
-            enemyBox.append("<img src='" + this.image +"'>");
+            enemyBox.append("<span id='char1'><h3 class='name'>Brutus the Buckeye</h3><img src='" + this.image +"'><h4 class='hp' id='osuHP'></h4></span>");
         }
     },
     // Michigan State
     {
         "name": "Sparty",
         "image": "assets/images/msu.jpg",
-        "HP": 1000,
-        "AP": 100,
-        "CAP": 10,
+        "HP": 1700,
+        "AP": 20,
+        "CAP": 100,
         "reset": function(){
             msuBox.empty();
-            msuBox.append("<img src='" + this.image +"'>");
+            msuBox.append("<span id='char2'><h3 class='name'>Sparty</h3><img src='" + this.image +"'><h4 class='hp' id='msuHP'></h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 2;
@@ -101,19 +101,19 @@ var teams = [
             enemyTeam = 2;
             enemyChosen = true;
             msuEnemyBox.empty();
-            enemyBox.append("<img src='" + this.image +"'>");
+            enemyBox.append("<span id='char2'><h3 class='name'>Sparty</h3><img src='" + this.image +"'><h4 class='hp' id='msuHP'></h4></span>");
         }
     },
     // Wisconsin University
     {
         "name": "Bucky the Badger",
         "image": "assets/images/wisconsin.jpg",
-        "HP": 1000,
-        "AP": 100,
-        "CAP": 10,
+        "HP": 2200,
+        "AP": 30,
+        "CAP": 80,
         "reset": function(){
             wiscoBox.empty();
-            wiscoBox.append("<img src='" + this.image +"'>");
+            wiscoBox.append("<span id='char3'><h3 class='name'>Bucky the Badger</h3><img src='" + this.image +"'><h4 class='hp' id='wiscoHP'></h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 3;
@@ -124,7 +124,7 @@ var teams = [
             enemyTeam = 3;
             enemyChosen = true;
             wiscoEnemyBox.empty();
-            enemyBox.append("<img src='" + this.image +"'>");
+            enemyBox.append("<span id='char3'><h3 class='name'>Bucky the Badger</h3><img src='" + this.image +"'><h4 class='hp' id='wiscoHP'></h4></span>");
         }
     }
 ];
