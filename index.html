@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Unit 4 Game</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Big Ten Fighting Game!</h1>
+    </header>
+    <div class="container gameBody">
+        <div class="row" id="charSelect">
+            <div class="col-md-12">
+                <span id="char1">
+                    <h3 class="name">Jim Harbaugh</h3>
+                    <img src="assets/images/umich.jpg" alt="Jim Harbaugh">
+                    <h4 class="hp"></h4>
+                </span>
+                <span id="char2">
+                    <h3 class="name">Brutus the Buckeye</h3>
+                    <img src="assets/images/osu.jpg" alt="Brutus the Buckeye">
+                    <h4 class="hp"></h4>
+                </span>
+                <span id="char3">
+                    <h3 class="name">Sparty</h3>
+                    <img src="assets/images/msu.jpg" alt="Sparty">
+                    <h4 class="hp"></h4>
+                </span>
+                <span id="char4">
+                    <h3 class="name">Bucky the Badger</h3>
+                    <img src="assets/images/wisconsin.jpg " alt="Bucky the Badger">
+                    <h4 class="hp"></h4>
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12"><h3>Your Team</h3></div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-3" id="chosenChamp"></div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="availableEnemies">
+                            <span id="enemy1"></span>
+                            <span id="enemy2"></span>
+                            <span id="enemy3"></span>
+                            <span id="enemy4"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                            <h3>Enemies Available to Attack</h3>
+                        <h3>Fight Section</h3>
+                        <h3 id="attackButton">Attack!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div><h3>Defender</h3></div>
+            <div class="col-md-3" id="opponent"></div>
+        </div>
+        <div  class="row">
+            <div class="col-md-12" id="narrator"></div>
+        </div>
+    </div>
+
+    <script src="assets/js/game.js"></script>
+</body>
+</html>

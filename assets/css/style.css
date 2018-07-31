@@ -1,0 +1,41 @@
+h1, h3 {
+    text-align: center;
+}
+
+header {
+    width: 100%;
+    display: block;
+    margin: 30px 0;
+}
+
+img {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    display: block;
+}
+
+.gameBody {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+#char1, #char2, #char3, #char4{
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+}
+
+#enemy1, #enemy2, #enemy3, #enemy4{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#attackButton {
+    border: 2px solid black;
+    width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
