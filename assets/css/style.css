@@ -49,6 +49,12 @@ img {
     width: 50%;
 }
 
+#headerImage{
+    width: 800px;
+    display: block;
+    margin: 0 auto;
+}
+
 #enemy1, #enemy2, #enemy3, #enemy4{
     width: 25%;
     box-sizing: border-box;
