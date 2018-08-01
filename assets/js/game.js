@@ -209,6 +209,7 @@ function attack(){
             narrateBox.empty();
             narrateBox.html("<h1>You are the Big Ten Champion!</h1>");
             enemyChosen = false;
+            enemyBox.empty();
         }
         else{
             narrateBox.empty();
