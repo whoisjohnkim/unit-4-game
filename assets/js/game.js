@@ -14,24 +14,25 @@ var narrateBox = $("#narrator");
 var chosenTeam, enemyTeam = 0;
 var teamChosen, enemyChosen = false;
 var attackMultiplier = 1;
+var enemiesBeaten = 0;
 
 function setEnemies(num){
     teamChosen = true;
     if(num !== 0){
         umBox.empty();
-        umEnemyBox.append("<span id='char0'><h3 class='name'>Jim Harbaugh</h3><img src='" + teams[0].image +"'><h4 class='hp' id='umHP'>" + teams[0].HP + " HP</h4></span>")
+        umEnemyBox.append("<span id='char1'><h3 class='name'>Jim Harbaugh</h3><img src='" + teams[0].image +"'><h4 class='hp' id='umHP'>" + teams[0].HP + " HP</h4></span>")
     }
     if(num !== 1){
         osuBox.empty();
-        osuEnemyBox.append("<span id='char1'><h3 class='name'>Brutus the Buckeye</h3><img src='" + teams[1].image +"'><h4 class='hp' id='osuHP'>" + teams[1].HP + " HP</h4></span>")
+        osuEnemyBox.append("<span id='char2'><h3 class='name'>Brutus the Buckeye</h3><img src='" + teams[1].image +"'><h4 class='hp' id='osuHP'>" + teams[1].HP + " HP</h4></span>")
     }
     if(num !== 2){
         msuBox.empty();
-        msuEnemyBox.append("<span id='char2'><h3 class='name'>Sparty</h3><img src='" + teams[2].image +"'><h4 class='hp' id='msuHP'>" + teams[2].HP + " HP</h4></span>")
+        msuEnemyBox.append("<span id='char3'><h3 class='name'>Sparty</h3><img src='" + teams[2].image +"'><h4 class='hp' id='msuHP'>" + teams[2].HP + " HP</h4></span>")
     }
     if(num !== 3){
         wiscoBox.empty();
-        wiscoEnemyBox.append("<span id='char3'><h3 class='name'>Bucky the Badger</h3><img src='" + teams[3].image +"'><h4 class='hp' id='wiscoHP'>" + teams[3].HP + " HP</h4></span>")
+        wiscoEnemyBox.append("<span id='char4'><h3 class='name'>Bucky the Badger</h3><img src='" + teams[3].image +"'><h4 class='hp' id='wiscoHP'>" + teams[3].HP + " HP</h4></span>")
     }
 }
 
@@ -45,18 +46,19 @@ var teams = [
         "CAP": 100,
         "reset": function(){
             umBox.empty();
-            umBox.append("<span id='char0'><h3 class='name'>Jim Harbaugh</h3><img src='" + this.image +"'><h4 class='hp' id='umHP'>" + this.HP + " HP</h4></span>");
+            umBox.append("<span id='char1'><h3 class='name'>Jim Harbaugh</h3><img src='" + this.image +"'><h4 class='hp' id='umHP'>" + this.HP + " HP</h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 0;
-            // chosenBox.append("<img src='" + this.image +"'>");
             setEnemies(0);
+            attackButton.removeClass("defaultButton");
+            attackButton.addClass("umButton");
         },
         "setEnemy": function(){
             enemyTeam = 0;
             enemyChosen = true;
             umEnemyBox.empty();
-            enemyBox.append("<span id='char0'><h3 class='name'>Jim Harbaugh</h3><img src='" + this.image +"'><h4 class='hp' id='umHP'>" + this.HP + " HP</h4></span>");
+            enemyBox.append("<span id='char1'><h3 class='name'>Jim Harbaugh</h3><img src='" + this.image +"'><h4 class='hp' id='umHP'>" + this.HP + " HP</h4></span>");
         },
         "updateHP": function(){
             $("#umHP").text(this.HP + " HP")
@@ -71,18 +73,19 @@ var teams = [
         "CAP": 100,
         "reset": function(){
             osuBox.empty();
-            osuBox.append("<span id='char1'><h3 class='name'>Brutus the Buckeye</h3><img src='" + this.image +"'><h4 class='hp' id='osuHP'>" + this.HP + " HP</h4></span>");
+            osuBox.append("<span id='char2'><h3 class='name'>Brutus the Buckeye</h3><img src='" + this.image +"'><h4 class='hp' id='osuHP'>" + this.HP + " HP</h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 1;
-            //chosenBox.append("<img src='" + this.image +"'>");
             setEnemies(1);
+            attackButton.removeClass("defaultButton");
+            attackButton.addClass("osuButton");
         },
         "setEnemy": function(){
             enemyTeam = 1;
             enemyChosen = true;
             osuEnemyBox.empty();
-            enemyBox.append("<span id='char1'><h3 class='name'>Brutus the Buckeye</h3><img src='" + this.image +"'><h4 class='hp' id='osuHP'>" + this.HP + " HP</h4></span>");
+            enemyBox.append("<span id='char2'><h3 class='name'>Brutus the Buckeye</h3><img src='" + this.image +"'><h4 class='hp' id='osuHP'>" + this.HP + " HP</h4></span>");
         },
         "updateHP": function(){
             $("#osuHP").text(this.HP + " HP")
@@ -97,18 +100,19 @@ var teams = [
         "CAP": 100,
         "reset": function(){
             msuBox.empty();
-            msuBox.append("<span id='char2'><h3 class='name'>Sparty</h3><img src='" + this.image +"'><h4 class='hp' id='msuHP'>" + this.HP + " HP</h4></span>");
+            msuBox.append("<span id='char3'><h3 class='name'>Sparty</h3><img src='" + this.image +"'><h4 class='hp' id='msuHP'>" + this.HP + " HP</h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 2;
-            //chosenBox.append("<img src='" + this.image +"'>");
             setEnemies(2);
+            attackButton.removeClass("defaultButton");
+            attackButton.addClass("msuButton");
         },
         "setEnemy": function(){
             enemyTeam = 2;
             enemyChosen = true;
             msuEnemyBox.empty();
-            enemyBox.append("<span id='char2'><h3 class='name'>Sparty</h3><img src='" + this.image +"'><h4 class='hp' id='msuHP'>" + this.HP + " HP</h4></span>");
+            enemyBox.append("<span id='char3'><h3 class='name'>Sparty</h3><img src='" + this.image +"'><h4 class='hp' id='msuHP'>" + this.HP + " HP</h4></span>");
         },
         "updateHP": function(){
             $("#msuHP").text(this.HP + " HP")
@@ -123,18 +127,19 @@ var teams = [
         "CAP": 80,
         "reset": function(){
             wiscoBox.empty();
-            wiscoBox.append("<span id='char3'><h3 class='name'>Bucky the Badger</h3><img src='" + this.image +"'><h4 class='hp' id='wiscoHP'>" + this.HP + " HP</h4></span>");
+            wiscoBox.append("<span id='char4'><h3 class='name'>Bucky the Badger</h3><img src='" + this.image +"'><h4 class='hp' id='wiscoHP'>" + this.HP + " HP</h4></span>");
         },
         "setMyTeam": function(){
             chosenTeam = 3;
-            //chosenBox.append("<img src='" + this.image +"'>");
             setEnemies(3);
+            attackButton.removeClass("defaultButton");
+            attackButton.addClass("wiscoButton");
         },
         "setEnemy": function(){
             enemyTeam = 3;
             enemyChosen = true;
             wiscoEnemyBox.empty();
-            enemyBox.append("<span id='char3'><h3 class='name'>Bucky the Badger</h3><img src='" + this.image +"'><h4 class='hp' id='wiscoHP'>" + this.HP + " HP</h4></span>");
+            enemyBox.append("<span id='char4'><h3 class='name'>Bucky the Badger</h3><img src='" + this.image +"'><h4 class='hp' id='wiscoHP'>" + this.HP + " HP</h4></span>");
         },
         "updateHP": function(){
             $("#wiscoHP").text(this.HP + " HP")
@@ -199,11 +204,19 @@ function attack(){
     narrateBox.html("<p>You have attacked " + teams[enemyTeam].name + " for " + teams[chosenTeam].AP * attackMultiplier + " damage.</p>")
     teams[enemyTeam].HP -= teams[chosenTeam].AP * attackMultiplier++;
     if(teams[enemyTeam].HP <= 0){
-        narrateBox.empty();
-        narrateBox.html("<p>You have defeated " + teams[enemyTeam].name + ".</p>");
-        narrateBox.append("<p>Choose another enemy!</p>")
-        enemyBox.empty();
-        enemyChosen = false;
+        enemiesBeaten++;
+        if(enemiesBeaten === 3){
+            narrateBox.empty();
+            narrateBox.html("<h1>You are the Big Ten Champion!</h1>");
+            enemyChosen = false;
+        }
+        else{
+            narrateBox.empty();
+            narrateBox.html("<p>You have defeated " + teams[enemyTeam].name + ".</p>");
+            narrateBox.append("<p>Choose another enemy!</p>")
+            enemyBox.empty();
+            enemyChosen = false;
+        }
     }
     else{
         teams[enemyTeam].updateHP();
