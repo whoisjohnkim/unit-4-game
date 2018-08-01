@@ -1,7 +1,7 @@
 body {
     line-height: 2em;
-    background-image: url("../images/footballField.png");
-    background-size: auto;
+    background-image: url("../images/backgroundImage.jpg");
+    background-size: 100%;
     color: white !important;
 }
 

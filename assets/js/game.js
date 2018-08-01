@@ -210,6 +210,9 @@ function attack(){
             narrateBox.html("<h1>You are the Big Ten Champion!</h1>");
             enemyChosen = false;
             enemyBox.empty();
+            var audioElement = document.createElement("audio");
+            audioElement.setAttribute("src", "assets/sounds/weAreTheChampions.mp3");
+            audioElement.play();
         }
         else{
             narrateBox.empty();
