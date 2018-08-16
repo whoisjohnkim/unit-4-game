@@ -147,7 +147,7 @@ var teams = [
     }
 ];
 
-
+// Restart the game
 function totReset(){
     enemyChosen = false;
     teamChosen = false;
@@ -157,6 +157,7 @@ function totReset(){
     }
 }
 
+// Function to pick your team
 umBox.click(function(){
     if(!teamChosen){
         teams[0].setMyTeam();
@@ -178,6 +179,7 @@ wiscoBox.click(function(){
     }
 });
 
+// Function to choose enemy team
 umEnemyBox.click(function(){
     if(!enemyChosen){
         teams[0].setEnemy();
@@ -198,7 +200,6 @@ wiscoEnemyBox.click(function(){
         teams[3].setEnemy();
     }
 });
-
 
 function attack(){
     narrateBox.html("<p>You have attacked " + teams[enemyTeam].name + " for " + teams[chosenTeam].AP * attackMultiplier + " damage.</p>")
